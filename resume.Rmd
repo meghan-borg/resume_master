@@ -1,13 +1,13 @@
 ---
 name: Meghan
 surname: Borg
-position: "Research Scientist"
+position: "Researcher"
 address: "St. Catharines, Ontario, CA"
 phone: 905 933 6276
 email: "meghanborg1@gmail.com"
 github: meghan-borg
 linkedin: "www.linkedin.com/in/meghanborg"
-aboutme: "Highly effective researcher with graduate work focusing on youth mental health. Extensive experience designing research studies, collecting data, and analysing large complex datasets using a variety of statistical programs (e.g., R, SPSS, MPlus) and statistical methods (e.g., predictive, cluster, longitudinal, mixed-methods, qualitative analyses). Eager to learn and build my career in a creative and collaborative environment."
+aboutme: "Highly effective researcher with extensive experience designing research studies, collecting data, and analysing large complex datasets using a variety of statistical programs (e.g., R, SPSS) and statistical methods (e.g., predictive, cluster, longitudinal, mixed-methods)"
 #orcid: 0000-0001-5586-5640
 date: "`r format(Sys.time(), '%B %Y')`"
 headcolor: 414141
@@ -47,37 +47,20 @@ if (any(installed_packages == FALSE)) {
 lapply(packages, library, character.only = TRUE) %>%
   invisible()
 
-
 ```
 
 
-# Work Experience
+# Selected Experience
 
 ```{r test work exp}
 research <- tribble(
     ~title, ~unit, ~startMonth, ~startYear, ~endMonth, ~endYear, ~where, ~detail,
-    "Graduate Student Researcher", "Adolescent Development Lab - Department of Psychology ", "July", 2020, "Present", NA, "Brock University", 
-    "Primary research interests include investigating bi-directional associations between solitude and adolescent mental health \\begin{itemize}
-        \\item Conducted a total of 10 research projects (an additional five ongoing) to provide insights into adolescent mental health using survey data from 4,000+ participants
-        \\item Translate research findings into insights for technical audiences (seven published papers, 10+ conference presentations) and non-technical audiences (infographics for local and international community agencies such as WHO/PAHO and UNICEF)
-        \\item Supervise and mentor four undergraduate students to successfully design a research study, collect data, and effectively disseminate findings
-        \\item Facilitate meetings with a youth engagement committee (made up of approx. 10-20 adolescents) designed to advocate for youth-led research and the integration of youth in the research process
-        \\item Develop and deliver a workshop to faculty and students on team collaboration, workflow, and project management using different applications (Notion, Paperpile). I create templates that allow users to share documents efficiently within a team, track task progress, and organize project outputs
-        \\item Ranked first out of 160 doctoral applicants across Canada to receive a competitive scholarship based on exceptional research ability and achievements within and beyond academia 
-    \\end{itemize}",
+    "Researcher", "Adolescent Development Lab - Department of Psychology ", "July", 2020, "Present", NA, "Brock University", 
+    list("Led all aspects of 8+ mixed-methods research studies on youth mental health", "Collected data from 3500+ partipants using surveys, interviews, and physiological measures (e.g., EEG)", "Managed four research projects end-to-end", "Communicated insights in 10 presentations at scientific conferences"),
+    "Co-Instructor", "Data Science for Academic and Applied Research - Department of Psychology", "January", 2022, "April", 2023, "Brock University", list("Prepare course materials and deliver lectures to 300+ senior-level students", "Teach students project database management, data cleaning, analyses, and visualization using R and Excel, and how to communicate research findings to non-technical audiences using oral and written deliverables", "Received an overall evaluation rating of 4.9/5"),
     
-    "Co-Instructor", "Data Science for Academic and Applied Research - Department of Psychology", "January", 2022, "April", 2023, "Brock University", 
-    "Senior-level course to teach students: \\begin{itemize}
-        \\item Project database management, data cleaning, manipulation, and analyses in R
-        \\item Data visualization techniques using different programs (e.g., Excel, R)
-        \\item How to effectiely communicate research findings to non-technical audiences in oral and written form
-    \\end{itemize}",
-    
-    "Graduate Student Researcher", "Learning in a Digital World - Department of Psychology", "September", 2018, "July", 2020, "Wilfrid Laurier University", 
-    "Primary research interests were investigating gender differences in remuneration and negotiation during first-work experiences \\begin{itemize}
-        \\item Supervised a team of six researchers to conduct participant recruitment, data collection (online survey and semistructured interviews), and mixed-methods analysis from 270+ adolescents and young adults
-        \\item Led a team of four researchers to conduct a study on collaborative work among university students using survey data from 360 participants
-    \\end{itemize}"
+    "Research Assistant", "Adolescent Development Lab - Department of Psychology", "May", 2022, "April", 2023, "Brock University", 
+    list("Assisted in preparing and writing a large SSHRC Partnership Grant which involved 20 organizations including WHO/PAHO and UNICEF", "Facilitated a large hybrid two-day planning meeting with partners")
 )
 
 research %>%
@@ -99,7 +82,7 @@ tribble(
    ~`Coding Languages`, ~ `Data Visualization`, ~`Other Software/Tools`,
   "R, SQL, currently learning Python",
   "R, Canva, currently learning PowerBI",
-  "Git, Qualtrics, SPSS, MPlus, AMOS, HLM, Notion"
+  "Git, Qualtrics, Excel, SPSS, MPlus, AMOS, HLM, Notion"
 ) %>%
   kable(booktabs = T, align = 'c', escape = F, format = "latex") %>%
   kable_styling(full_width = F, font_size = 9,latex_options = "hold_position") %>% 
@@ -108,6 +91,9 @@ tribble(
   column_spec(column = 1:3, width = '4.75cm')
 ```
 
+# Awards
+* Received over $160,000 in funding to support my exemplary research
+* Ranked first out of 160 doctoral students to receive a competitive nationwide scholarship ($105,000)
 
 # Education
 
@@ -115,8 +101,8 @@ tribble(
 library(tibble)
 tribble(
   ~ Degree, ~ Year, ~ Institution, ~ Where,
-  "Brock University", "2020-24", "PhD, Psychology", "St. Catharines, ON",
-  "Wilfrid Laurier University", "2018-20", "MA, Psychology", "Waterloo, ON",
+  "Brock University", "2020-24", "PhD, Developmental Psychology", "St. Catharines, ON",
+  "Wilfrid Laurier University", "2018-20", "MA, Developmental Psychology", "Waterloo, ON",
   "Wilfrid Laurier University", "2014-18", "BA, Honours Psychology", "Waterloo, ON") %>%
   detailed_entries(Degree, Year, Institution, Where)
 ```
