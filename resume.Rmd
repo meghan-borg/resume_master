@@ -10,7 +10,7 @@ linkedin: "www.linkedin.com/in/meghanborg"
 aboutme: "Highly effective researcher with extensive experience designing research studies, collecting data, and analysing large complex datasets using a variety of statistical programs (e.g., R, SPSS) and statistical methods (e.g., predictive, cluster, longitudinal, mixed-methods)"
 #orcid: 0000-0001-5586-5640
 date: "`r format(Sys.time(), '%B %Y')`"
-headcolor: 414141
+headcolor: 414141 # this just changes the colour of a few attributes
 docname: resume
 output: vitae::awesomecv
 editor_options: 
@@ -53,27 +53,29 @@ lapply(packages, library, character.only = TRUE) %>%
 # Selected Experience
 
 ```{r test work exp}
+
 research <- tribble(
     ~title, ~unit, ~startMonth, ~startYear, ~endMonth, ~endYear, ~where, ~detail,
     "Researcher", "Adolescent Development Lab - Department of Psychology ", "July", 2020, "Present", NA, "Brock University", 
-    list("Led all aspects of 8+ mixed-methods research studies on youth mental health", "Collected data from 3500+ partipants using surveys, interviews, and physiological measures (e.g., EEG)", "Managed four research projects end-to-end", "Communicated insights in 10 presentations at scientific conferences"),
-    "Co-Instructor", "Data Science for Academic and Applied Research - Department of Psychology", "January", 2022, "April", 2023, "Brock University", list("Prepare course materials and deliver lectures to 300+ senior-level students", "Teach students project database management, data cleaning, analyses, and visualization using R and Excel, and how to communicate research findings to non-technical audiences using oral and written deliverables", "Received an overall evaluation rating of 4.9/5"),
+    list("Led all aspects of 10+ mixed-methods research studies on youth mental health", "Collected and analyzed data from 4000+ participants using surveys, open-ended, and physiological measures (e.g., EEG)", "Communicated insights in 10 presentations at scientific conferences", "Trained faculty and staff on team collaboration, workflow, and project management using templates I created that allow users to share documents efficiently within a team, track task progress, and organize deliverables"),
+    
+    "Co-Instructor", "Data Science for Academic and Applied Research - Department of Psychology", "January", 2022, "April", 2024, "Brock University", list("Prepare course materials and deliver lectures to 300+ senior-level students", "Teach students project database management, data cleaning, analyses, and visualization using R and Excel, and how to communicate research findings to non-technical audiences using oral and written deliverables", "Received an overall evaluation rating of 4.9/5"),
     
     "Research Assistant", "Adolescent Development Lab - Department of Psychology", "May", 2022, "April", 2023, "Brock University", 
-    list("Assisted in preparing and writing a large SSHRC Partnership Grant which involved 20 organizations including WHO/PAHO and UNICEF", "Facilitated a large hybrid two-day planning meeting with partners")
+    list("Assisted in preparing and writing a large 2.5 million SSHRC Partnership Grant which involved 20 organizations including WHO/PAHO and UNICEF", "Facilitated a large hybrid two-day planning meeting with partners")
 )
 
 research %>%
-  detailed_entries(
-    with = title,
-    what = unit,
-    why = detail,
-    when = glue::glue("{startMonth} {startYear} - {endMonth} {endYear}",.na = ""),
-    where = where, .protect = F
-  )
+    detailed_entries(
+        with = title,
+        what = unit,
+        why = detail,
+        when = glue::glue("{startMonth} {startYear} - {endMonth} {endYear}",.na = ""),
+        where = where, .protect = F
+    )
+
 
 ```
-
 
 # Technical Skills
 
@@ -85,15 +87,17 @@ tribble(
   "Git, Qualtrics, Excel, SPSS, MPlus, AMOS, HLM, Notion"
 ) %>%
   kable(booktabs = T, align = 'c', escape = F, format = "latex") %>%
-  kable_styling(full_width = F, font_size = 9,latex_options = "hold_position") %>% 
+  kable_styling(full_width = F, font_size = 10,latex_options = "hold_position") %>% 
   row_spec(0, bold = T, color = "#414141") %>% 
   row_spec(1, bold = F, color = "#414141") %>% 
-  column_spec(column = 1:3, width = '4.75cm')
+  column_spec(column = 1:3, width = '4.75cm') %>% 
+  sub("\\\\toprule", "", .) %>% #removes top border
+  sub("\\\\bottomrule", "", .) #removes bottom border
 ```
 
 # Awards
 * Received over $160,000 in funding to support my exemplary research
-* Ranked first out of 160 doctoral students to receive a competitive nationwide scholarship ($105,000)
+* Ranked 1st out of 160 doctoral students to receive a competitive nationwide scholarship ($105,000)
 
 # Education
 
